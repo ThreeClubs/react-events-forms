@@ -1,11 +1,11 @@
 import { useState } from "react";
-import "./Form.css"
+import "./Form.css";
 
 export default function Form() {
   // we can write export default this way instead of at bottom
 
   const [inputList, setInputList] = useState([]);
-  const [val, setVal] = useState('');
+  const [val, setVal] = useState("");
 
   const handleSubmit = function (event) {
     event.preventDefault();
@@ -22,7 +22,11 @@ export default function Form() {
   return (
     <div className="formApp">
       <form className="formContainer" onSubmit={handleSubmit}>
-        <input placeholder="input something..." className="inputField" onChange={handleChange}></input>
+        <input
+          placeholder="input something..."
+          className="inputField"
+          onChange={handleChange}
+        ></input>
         <input className="button" type="submit"></input>
       </form>
       <div className="displayContainer">
@@ -35,5 +39,4 @@ export default function Form() {
       </div>
     </div>
   );
-  
 }
