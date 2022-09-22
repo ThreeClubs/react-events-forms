@@ -21,16 +21,18 @@ export default function Form() {
 
   return (
     <div className="formApp">
-      <form onSubmit={handleSubmit}>
-        <input onChange={handleChange}></input>
-        <input type="submit"></input>
+      <form className="formContainer" onSubmit={handleSubmit}>
+        <input placeholder="input something..." className="inputField" onChange={handleChange}></input>
+        <input className="button" type="submit"></input>
       </form>
-      <p>List of Submitted Strings: </p>
-      <ul>
-        {inputList.map((item) => (
-          <li>{item}</li>
-        ))}
-      </ul>
+      <div className="displayContainer">
+        <p>List of Submitted Strings: </p>
+        <ul>
+          {inputList.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
   
