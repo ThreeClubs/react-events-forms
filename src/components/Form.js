@@ -7,22 +7,25 @@ export default function Form() {
   const [inputList, setInputList] = useState([]);
   const [val, setVal] = useState("");
 
-  const handleSubmit = function (event) {
-    event.preventDefault();
+  const handleSubmit = function (e) {
+    e.preventDefault();
     const temp = [...inputList, val];
     console.log(temp);
     setInputList(temp);
   };
 
-  const handleChange = function (event) {
-    setVal(event.target.value);
-    // this changes val to the user input (string
+  const handleChange = function (e) {
+    setVal(e.target.value);
+    // this changes val to the user input (string)
   };
 
   return (
     <div className="formApp">
       <form className="formContainer" onSubmit={handleSubmit}>
         <input
+          onKeyPress={(e) => {
+            e.key === "Enter" && e.preventDefault();
+          }}
           placeholder="input something..."
           className="inputField"
           onChange={handleChange}
@@ -32,9 +35,11 @@ export default function Form() {
       <div className="displayContainer">
         <p>List of Submitted Strings: </p>
         <ul>
-          {inputList.map((item) => (
-            <li>{item}</li>
-          ))}
+          <span>
+            {inputList.map((i) => (
+              <li>{i}</li>
+            ))}
+          </span>
         </ul>
       </div>
     </div>
