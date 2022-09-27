@@ -1,12 +1,14 @@
 import "./App.css";
 import Form from "./components/Form";
 import ConditionalRendering from "./components/ConditionalRendering";
+import Animals from "./components/Animals";
 
-function App() {
-  return <div className="App">
-    <Form></Form>
-    <ConditionalRendering></ConditionalRendering>
-  </div>;
+export default function App() {
+  return (
+    <div className="App">
+      <Form></Form>
+      <ConditionalRendering></ConditionalRendering>
+      <Animals></Animals>
+    </div>
+  );
 }
-
-export default App;

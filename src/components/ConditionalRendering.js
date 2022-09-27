@@ -12,6 +12,8 @@ export default function ConditionalRendering() {
         {showContent === true
           ? "Congrats! You've found the hidden content."
           : "Click the button..."}
+          {/* {showContent && <p>YES!</p>} 
+          We can use logical && bc true + expression = true */}
       </div>
       <button className="button" onClick={changeContent}>
         Click Me!
